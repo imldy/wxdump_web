@@ -4,7 +4,7 @@ import { to_initview } from '@/utils/common_utils'
 // import {inject, onMounted} from 'vue';
 
 const params = process.env.NODE_ENV === 'development' ? {
-  baseURL: 'http://127.0.0.1:5000',  // 根据你的实际情况设置基础URL
+  // 开发环境下不设置baseURL，让请求使用相对路径，通过vite代理
   withCredentials: true,  // 表示跨域请求时是否需要使用凭证，开启后，后端服务器要设置允许开启
 } : {
   withCredentials: true,  // 表示跨域请求时是否需要使用凭证，开启后，后端服务器要设置允许开启
