@@ -76,8 +76,10 @@ const chart_option = ref({
 
 const get_date_count_data = async () => {
   // {"2024-12-20":{ "sender_count": sender_count,  "receiver_count": receiver_count, "total_count": total_count  },....}
-  date_count_data.value = await apiDateCount(word.value, datetime.value[0] / 1000, datetime.value[1] / 1000);
-
+  // 将毫秒时间戳除以1000并向下取整，转换为整数秒时间戳
+  const startTime = Math.floor(datetime.value[0] / 1000);
+  const endTime = Math.floor(datetime.value[1] / 1000);
+  date_count_data.value = await apiDateCount(word.value, startTime, endTime);
   // 根据key排序
   date_count_data.value = Object.fromEntries(Object.entries(date_count_data.value).sort());
 
