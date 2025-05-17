@@ -23,7 +23,7 @@ const requestExport = async () => {
   try {
     Result.value = await http.post('/api/rs/export_html', {
       'wxid': props.wxid,
-      // 'datetime': datetime.value,
+      'datetime': datetime.value,
     });
   } catch (error) {
     console.error('Error fetching data msg_count:', error);
@@ -41,10 +41,10 @@ const handDatetimeChildData = (val: any) => {
 
 <template>
   <div>
-<!--    <div>-->
-<!--      <strong>时间(默认全部)：</strong>-->
-<!--      <DateTimeSelect @datetime="handDatetimeChildData"/>-->
-<!--    </div>-->
+    <div>
+      <strong>时间(默认全部)：</strong>
+      <DateTimeSelect @datetime="handDatetimeChildData"/>
+    </div>
     <span>使用说明：（1）根据 https://blog.csdn.net/meser88/article/details/130229417 进行设置</span><br/>
     <span>（2）打开导出的文件夹位置，使用（1）设置的浏览器打开 index.html 文件</span>
     <div style="position: relative;">
