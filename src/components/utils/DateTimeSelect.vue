@@ -43,6 +43,20 @@ const shortcuts = [
     },
   },
   {
+    text: '今年',
+    value: () => {
+      const end = new Date()
+      const start = new Date()
+      start.setMonth(0)
+      start.setDate(1)
+      start.setHours(0, 0, 0)
+      end.setMonth(11)
+      end.setDate(31)
+      end.setHours(23, 59, 59)
+      return [start, end]
+    },
+  },
+  {
     text: '最近半年',
     value: () => {
       const end = new Date()
