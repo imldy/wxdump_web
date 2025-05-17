@@ -1,5 +1,6 @@
 import http from "@/utils/axios.js";
 import {ElNotification} from "element-plus";
+import { local_msg_count, local_mywxid, local_user_list, local_msg_list } from "@/data.js";
 
 const is_local_data = localStorage.getItem('isUseLocalData') === 't';
 // 编辑器禁用检查
