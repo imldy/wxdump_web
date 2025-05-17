@@ -11,6 +11,7 @@ import ExportJSON from "@/components/chatBackup/ExportJSON.vue";
 import ExportHTML from "@/components/chatBackup/ExportHTML.vue";
 import ExportPDF from "@/components/chatBackup/ExportPDF.vue";
 import ExportDOCX from "@/components/chatBackup/ExportDOCX.vue";
+import ExportPlain from "@/components/chatBackup/ExportPlain.vue";
 
 const props = defineProps({
   wxid: {
@@ -47,6 +48,10 @@ const setting = {
   'html': {
     brief: 'html-测试中',
     detail: "主要用于浏览器可视化查看。",
+  },
+  'plain': {
+    brief: '普通文本',
+    detail: "导出为纯文本格式，便于阅读和二次处理。",
   },
   'pdf': {
     brief: 'pdf-开发中',
@@ -92,6 +97,7 @@ const setting = {
           <ExportCSV v-if="exportType=='csv'" :wxid="props.wxid"/>
           <ExportJSON v-if="exportType=='json'" :wxid="props.wxid"/>
           <ExportHTML v-if="exportType=='html'" :wxid="props.wxid"/>
+          <ExportPlain v-if="exportType=='plain'" :wxid="props.wxid"/>
           <ExportPDF v-if="exportType=='pdf'" :wxid="props.wxid"/>
           <ExportDOCX v-if="exportType=='docx'" :wxid="props.wxid"/>
         </div>
